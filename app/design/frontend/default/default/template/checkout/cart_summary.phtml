@@ -1,0 +1,39 @@
+<?php
+	$val = $this->getShippingArray();
+	$items = $val->collectTotals();
+	$currency = $this->getSym();
+	$shippingMethod = $val->getShippingAddress(); 
+?>
+<div id="cart-summary">
+	<div class="block-title">
+		<strong>
+			<span><?php echo $this->__('Cart Summary') ?></span>
+		</strong>
+	</div>
+	<div class="cart-summary-details ">
+		<div class="cart-item">
+			<label for="cartitem"><?php echo $this->__('Cart in Item') ?></label>
+			<span><?php echo $val->getItemsSummaryQty(); ?></span>
+		</div>
+		<div class="sub-total">
+			<label for="subtotal"><?php echo $this->__('Subtotal') ?></label>
+			<span><?php echo $this->helper('core')->formatPrice($items->getSubtotal()) ?></span>
+		</div>
+		<?php if($shippingMethod->getShippingAmount()):?>
+			<div class="flate-rate">
+				<label for="shiping-name"><?php echo $shippingMethod->getShippingDescription() ?></label>
+				<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getShippingAmount()) ?></span>
+			</div>
+		<?php endif;?>
+		<?php if($shippingMethod->getTaxAmount()):?>
+			<div class="tax-ammount">
+				<label for="tax-name"><?php echo $this->__('Tax'); ?></label>
+				<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getTaxAmount()) ?></span>
+			</div>
+		<?php endif;?>
+		<div class="grand-total">
+			<label for="grandTotal"><?php echo $this->__('GrandTotal') ?></label>
+			<span><?php echo $this->helper('core')->formatPrice($items->getGrandTotal()) ?></span>
+		</div>		
+	</div>
+</div>

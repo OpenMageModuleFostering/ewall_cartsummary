@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Ewall_Cartsummary</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Provide your customers with a quick and convenient way view the cart summary in checkout page.</summary>
+    <description>Provide your customers with a quick and convenient way view the cart summary in checkout page.</description>
+    <notes>Provide your customers with a quick and convenient way view the cart summary in checkout page.</notes>
+    <authors><author><name>Ewallsolutions</name><user>ewallsolutions</user><email>support@ewallsolutions.com</email></author></authors>
+    <date>2013-02-27</date>
+    <time>10:53:49</time>
+    <contents><target name="magelocal"><dir name="Ewall"><dir name="Cartsummary"><dir name="Block"><file name="Summary.php" hash="7b0da489c16617a505641cc34da6f5fa"/></dir><dir name="etc"><file name="config.xml" hash="a3c56d9cb8770100d6d9ce0b280cb157"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ewall_Cartsummary.xml" hash="64585116cfa23e0cdd915a39ff110a56"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="cart_summary.xml" hash="c4383e6cb1ae94fe334d98c79a759583"/></dir><dir name="template"><dir name="checkout"><file name="cart_summary.phtml" hash="5052b7663431a7b2494f28646c6044c2"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="summary.css" hash="9216261ae385b3c0cd0b4c973b84f4aa"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.13</min><max>5.3.15</max></php></required></dependencies>
+</package>
