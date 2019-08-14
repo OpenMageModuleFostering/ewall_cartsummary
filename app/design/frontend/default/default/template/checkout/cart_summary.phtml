@@ -1,39 +1,66 @@
 <?php
+	$cartsumarry_enable = Mage::getStoreConfig('cartsummary/configuration/enable');
 	$val = $this->getShippingArray();
 	$items = $val->collectTotals();
 	$currency = $this->getSym();
 	$shippingMethod = $val->getShippingAddress(); 
 ?>
-<div id="cart-summary">
-	<div class="block-title">
-		<strong>
-			<span><?php echo $this->__('Cart Summary') ?></span>
-		</strong>
-	</div>
-	<div class="cart-summary-details ">
-		<div class="cart-item">
-			<label for="cartitem"><?php echo $this->__('Cart in Item') ?></label>
-			<span><?php echo $val->getItemsSummaryQty(); ?></span>
+<?php if($cartsumarry_enable==1): ?>
+<form action="<?php echo $this->getUrl('cartsummary/index') ?>" method="post">
+	<div id="cart-summary">
+		<div class="block-title">
+			<strong>
+				<span><?php echo $this->__('Cart Summary') ?></span>
+			</strong>
 		</div>
-		<div class="sub-total">
-			<label for="subtotal"><?php echo $this->__('Subtotal') ?></label>
-			<span><?php echo $this->helper('core')->formatPrice($items->getSubtotal()) ?></span>
+		<div class="cart-summary-details ">
+			<div class="cart-item-name">
+				<label for="cart_item_name" class="cart_item_info"><?php echo $this->__('Product Name') ?></label>
+				<label for="cart_item_Qty" class="cart_item_qty"><?php echo $this->__('Qty') ?></label>
+				<label class="cart_item_name"><?php echo $this->__('Price') ?></label>
+				<div class="left">
+					<?php foreach ($val->getAllVisibleItems() as $item): ?>	
+						<div class="cartsummary_info">
+							<span class="Item_Name"><?php echo $item->getProduct()->getName(); ?></span>
+							<span class="Item_Qty">
+								<input type="text" name="cart[<?php echo $item->getId(); ?>][qty]" id="qty" maxlength="12" value="<?php echo $item->getQty(); ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+							</span>
+							<span class="Item_Price"><?php echo $this->helper('core')->formatPrice($item->getPrice()) ?></span>		
+							<a href="<?php echo $this->getUrl('cartsummary/index/delete')?><?php echo 'id/'.$item->getId(); ?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2">
+								<?php echo $this->__('Remove item')?>
+							</a>	
+						</div>			
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<div class="sub-total" style="clear:both;">
+				<label for="subtotal"><?php echo $this->__('Subtotal') ?></label>
+				<span><?php echo $this->helper('core')->formatPrice($items->getSubtotal()) ?></span>
+			</div>
+			<?php if($shippingMethod->getShippingAmount()):?>
+				<div class="flate-rate">
+					<label for="shiping-name"><?php echo $shippingMethod->getShippingDescription() ?></label>
+					<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getShippingAmount()) ?></span>
+				</div>
+			<?php endif;?>
+			<?php if($shippingMethod->getTaxAmount()):?>
+				<div class="tax-ammount">
+					<label for="tax-name"><?php echo $this->__('Tax'); ?></label>
+					<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getTaxAmount()) ?></span>
+				</div>
+			<?php endif;?>
+			<div class="grand-total">
+				<label for="grandTotal"><?php echo $this->__('Grand Total') ?></label>
+				<span><?php echo $this->helper('core')->formatPrice($items->getGrandTotal()) ?></span>
+			</div>	
+			<div class="cartsummary_addtocart">
+				<button type="submit" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($product) ?>')">
+					<span>
+						<span><?php echo $this->__('Update Cart') ?></span>
+					</span>
+				</button>
+			</div>						
 		</div>
-		<?php if($shippingMethod->getShippingAmount()):?>
-			<div class="flate-rate">
-				<label for="shiping-name"><?php echo $shippingMethod->getShippingDescription() ?></label>
-				<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getShippingAmount()) ?></span>
-			</div>
-		<?php endif;?>
-		<?php if($shippingMethod->getTaxAmount()):?>
-			<div class="tax-ammount">
-				<label for="tax-name"><?php echo $this->__('Tax'); ?></label>
-				<span><?php echo $this->helper('core')->formatPrice($shippingMethod->getTaxAmount()) ?></span>
-			</div>
-		<?php endif;?>
-		<div class="grand-total">
-			<label for="grandTotal"><?php echo $this->__('GrandTotal') ?></label>
-			<span><?php echo $this->helper('core')->formatPrice($items->getGrandTotal()) ?></span>
-		</div>		
-	</div>
-</div>
+	</div>	
+</form>		
+<?php endif;?>

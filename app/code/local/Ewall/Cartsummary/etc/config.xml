@@ -1,7 +1,7 @@
 <config>    
     <modules>
         <Ewall_Cartsummary>
-            <version>0.1.0</version>
+            <version>1.0.1</version>
         </Ewall_Cartsummary>
     </modules>
     <frontend>
@@ -10,7 +10,7 @@
                 <use>standard</use>
                 <args>
                     <module>Ewall_Cartsummary</module>
-                    <frontName>menu</frontName>
+                    <frontName>cartsummary</frontName>
                 </args>
             </cartsummary>
         </routers>  
@@ -24,9 +24,14 @@
    </frontend>
    <global>
 		<blocks>
-				<cartsummary>
-					<class>Ewall_Cartsummary_Block</class>
-				</cartsummary>
+			<cartsummary>
+				<class>Ewall_Cartsummary_Block</class>
+			</cartsummary>
         </blocks>
+		<helpers>
+			<cartsummary>
+				<class>Ewall_Cartsummary_Helper</class>
+			</cartsummary>
+        </helpers>
 	</global>
 </config> 

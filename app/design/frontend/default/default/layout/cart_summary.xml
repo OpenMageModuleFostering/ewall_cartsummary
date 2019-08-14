@@ -4,7 +4,7 @@
 	<checkout_onepage_index translate="label">
         <label>One Page Checkout</label>	
 		<block type="checkout/html_head" name="head" as="head">	
-			<action method="addCss"><stylesheet>css/summary.css</stylesheet></action>  
+			<action method="addCss"><stylesheet>css/cart_summary.css</stylesheet></action>  
 		</block>
         <remove name="left"/>
 

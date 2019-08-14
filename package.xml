@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Ewall_Cartsummary</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license>Open Software License (OSL)</license>
     <channel>community</channel>
     <extends/>
-    <summary>Provide your customers with a quick and convenient way view the cart summary in checkout page.</summary>
-    <description>Provide your customers with a quick and convenient way view the cart summary in checkout page.</description>
-    <notes>Provide your customers with a quick and convenient way view the cart summary in checkout page.</notes>
+    <summary>Provide your customers with a quick and convenient way to view the cart summary in checkout page.</summary>
+    <description>The Cart Summary module is an extension that provides a great ease-of-use enhancement to customers&#x2019; shopping experience&#x2014;it gives them a convenient option to view the products in the checkout page they&#x2019;ve selected so far in  store.</description>
+    <notes>The Cart Summary module is an extension that provides a great ease-of-use enhancement to customers&#x2019; shopping experience&#x2014;it gives them a convenient option to view the products in the checkout page they&#x2019;ve selected so far in  store.</notes>
     <authors><author><name>Ewallsolutions</name><user>ewallsolutions</user><email>support@ewallsolutions.com</email></author></authors>
-    <date>2013-02-27</date>
-    <time>10:53:49</time>
-    <contents><target name="magelocal"><dir name="Ewall"><dir name="Cartsummary"><dir name="Block"><file name="Summary.php" hash="7b0da489c16617a505641cc34da6f5fa"/></dir><dir name="etc"><file name="config.xml" hash="a3c56d9cb8770100d6d9ce0b280cb157"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ewall_Cartsummary.xml" hash="64585116cfa23e0cdd915a39ff110a56"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="cart_summary.xml" hash="c4383e6cb1ae94fe334d98c79a759583"/></dir><dir name="template"><dir name="checkout"><file name="cart_summary.phtml" hash="5052b7663431a7b2494f28646c6044c2"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="summary.css" hash="9216261ae385b3c0cd0b4c973b84f4aa"/></dir></dir></dir></dir></target></contents>
+    <date>2014-02-28</date>
+    <time>12:07:28</time>
+    <contents><target name="magelocal"><dir name="Ewall"><dir name="Cartsummary"><dir name="Block"><file name="Summary.php" hash="7ba262d00e93a12f270b28d79b75128a"/></dir><dir name="Helper"><file name="Data.php" hash="28af6b55d3650cc499d659d5f2f83dc9"/></dir><dir name="controllers"><file name="IndexController.php" hash="bb2144c818bc2ed902f894cf05b10684"/></dir><dir name="etc"><file name="adminhtml.xml" hash="0a2e3e73ff29427d6790274234747e36"/><file name="config.xml" hash="b9ddfb1438c71efb67aeaef24f18f2f2"/><file name="system.xml" hash="7d967c006610d256c1a90e40380db7c1"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ewall_Cartsummary.xml" hash="64585116cfa23e0cdd915a39ff110a56"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="cart_summary.xml" hash="4bb140784e178192046884002330b4a3"/></dir><dir name="template"><dir name="checkout"><file name="cart_summary.phtml" hash="4bf7b93c73f503dd342e9120d800f48b"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="cart_summary.css" hash="59afc12da331777f5605a4c5fba4e5a8"/></dir><dir name="images"><file name="cart_summary_remove.png" hash="dc3524fa3d93bd7af60b5a0a7020c319"/></dir></dir></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.2.13</min><max>5.3.15</max></php></required></dependencies>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
