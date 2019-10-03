@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Ewall_Cartsummary",
+    "name": "OpenMageModuleFostering\/Ewall_Cartsummary",
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
     "description": "Provide your customers with a quick and convenient way to view the cart summary in checkout page.",
     "authors": [
-    {
-        "name": "Ewallsolutions",
-        "email": "support@ewallsolutions.com"
-    }
-],
+        {
+            "name": "Ewallsolutions",
+            "email": "support@ewallsolutions.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
